@@ -24,7 +24,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+<<<<<<< HEAD
 import accomodation.booking.com.entities.DestinationEntity;
+=======
+>>>>>>> d1f72d543312810b0f1c62ceedc13ff97117c653
 import accomodation.booking.com.entities.ListPropertyEntity;
 import accomodation.booking.com.entities.UserEntity;
 import accomodation.booking.com.repositories.ListPropertyRepository;
@@ -69,7 +72,11 @@ public List<ListPropertyEntity> UserProperty(@PathVariable ("id") Long id){
 	List<ListPropertyEntity> userProperty = new ArrayList<>();
 	
 	for(int i=0; i<listProperty.size();i ++) {
+<<<<<<< HEAD
 	if(listProperty.get(i).getUser_entity().getId().equals(id)) {
+=======
+	if(listProperty.get(i).getUserEntity().getId().equals(id)) {
+>>>>>>> d1f72d543312810b0f1c62ceedc13ff97117c653
 		
 		userProperty.add(listProperty.get(i));
 	}	
@@ -85,7 +92,11 @@ public ListPropertyEntity updateProperty(@RequestBody ListPropertyEntity listPro
 	
 	UserEntity userEntity= null;
 	userEntity=userRepository.getOne(id);
+<<<<<<< HEAD
 	listPropertyEntity.setUser_entity(userEntity);
+=======
+	listPropertyEntity.setUserEntity(userEntity);
+>>>>>>> d1f72d543312810b0f1c62ceedc13ff97117c653
     return listpropertyRepository.save(listPropertyEntity);
 }
 	
@@ -96,7 +107,11 @@ public ListPropertyEntity listProperty(@RequestBody ListPropertyEntity listprope
 	
     UserEntity userEntity= null;
     userEntity=userRepository.getOne(id);
+<<<<<<< HEAD
     listproperty.setUser_entity(userEntity);
+=======
+    listproperty.setUserEntity(userEntity);
+>>>>>>> d1f72d543312810b0f1c62ceedc13ff97117c653
     
 	return listpropertyRepository.save(listproperty);
 }
@@ -110,6 +125,7 @@ public ResponseEntity<String> deleteByProperty_name(@PathVariable ("id") String 
 	
 }
 
+<<<<<<< HEAD
 //Searching for destination
 @GetMapping("/search/property/{destination}/{guests}/{rooms}")
 public List<ListPropertyEntity> searchProperty(@PathVariable("destination") String destination,
@@ -135,6 +151,8 @@ listPropertyEntity.get(i).getProperty_city_name().equals(destination) ) {
 return _listPropertyEntity ;
 }
 
+=======
+>>>>>>> d1f72d543312810b0f1c62ceedc13ff97117c653
 
 //Create new property  
 Map<String, String> errors;
@@ -161,7 +179,11 @@ Map<String, String> errors;
 	
 	UserEntity userEntity= null;
 	userEntity=userRepository.getOne(id);
+<<<<<<< HEAD
 	listproperty.setUser_entity(userEntity);
+=======
+	listproperty.setUserEntity(userEntity);
+>>>>>>> d1f72d543312810b0f1c62ceedc13ff97117c653
 	
 	return new ResponseEntity<>(listpropertyRepository.save(listproperty),HttpStatus.OK);
 	

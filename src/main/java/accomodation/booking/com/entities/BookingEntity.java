@@ -12,8 +12,11 @@ import javax.validation.constraints.NotBlank;
 import org.hibernate.annotations.Cascade;
 import org.hibernate.annotations.GenericGenerator;
 
+<<<<<<< HEAD
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+=======
+>>>>>>> d1f72d543312810b0f1c62ceedc13ff97117c653
 @Entity
 @Table(name="bookings")
 public class BookingEntity {
@@ -25,9 +28,16 @@ public class BookingEntity {
 	 private String id;
 	 
 	 @ManyToOne
+<<<<<<< HEAD
 	 private UserEntity user_entity;
 	 
 	 @OneToOne(mappedBy="bookingEntity")
+=======
+	 @Cascade( value = org.hibernate.annotations.CascadeType.ALL)
+	 private UserEntity user_entity;
+	 
+	 @OneToOne
+>>>>>>> d1f72d543312810b0f1c62ceedc13ff97117c653
 	 private PaymentEntity paymentEntity;
 	 
 	 @ManyToOne
@@ -78,7 +88,10 @@ public class BookingEntity {
 		this.id = id;
 	}
 
+<<<<<<< HEAD
 	@JsonIgnore
+=======
+>>>>>>> d1f72d543312810b0f1c62ceedc13ff97117c653
 	public UserEntity getUser_entity() {
 		return user_entity;
 	}
@@ -86,8 +99,20 @@ public class BookingEntity {
 	public void setUser_entity(UserEntity user_entity) {
 		this.user_entity = user_entity;
 	}
+<<<<<<< HEAD
 	
 	@JsonIgnore
+=======
+
+	public PaymentEntity getPaymentEntity() {
+		return paymentEntity;
+	}
+
+	public void setPaymentEntity(PaymentEntity paymentEntity) {
+		this.paymentEntity = paymentEntity;
+	}
+
+>>>>>>> d1f72d543312810b0f1c62ceedc13ff97117c653
 	public ListPropertyEntity getListPropertyEntity() {
 		return listPropertyEntity;
 	}
@@ -168,7 +193,11 @@ public class BookingEntity {
 		this.telephone = telephone;
 	}
 
+<<<<<<< HEAD
 	public BookingEntity(String id, UserEntity user_entity,
+=======
+	public BookingEntity(String id, UserEntity user_entity, PaymentEntity paymentEntity,
+>>>>>>> d1f72d543312810b0f1c62ceedc13ff97117c653
 			ListPropertyEntity listPropertyEntity, @NotBlank(message = "Please Enter your title") String title,
 			@NotBlank(message = "Please Enter your first name") String first_name,
 			@NotBlank(message = "Please Enter your last name") String last_name,
@@ -180,6 +209,10 @@ public class BookingEntity {
 			@NotBlank(message = "Please Enter your phone Number") String telephone) {
 		this.id = id;
 		this.user_entity = user_entity;
+<<<<<<< HEAD
+=======
+		this.paymentEntity = paymentEntity;
+>>>>>>> d1f72d543312810b0f1c62ceedc13ff97117c653
 		this.listPropertyEntity = listPropertyEntity;
 		this.title = title;
 		this.first_name = first_name;
@@ -197,7 +230,11 @@ public class BookingEntity {
 
 	@Override
 	public String toString() {
+<<<<<<< HEAD
 		return "BookingEntity [id=" + id + ", user_entity=" + user_entity 
+=======
+		return "BookingEntity [id=" + id + ", user_entity=" + user_entity + ", paymentEntity=" + paymentEntity
+>>>>>>> d1f72d543312810b0f1c62ceedc13ff97117c653
 				+ ", listPropertyEntity=" + listPropertyEntity + ", title=" + title + ", first_name=" + first_name
 				+ ", last_name=" + last_name + ", email_address=" + email_address + ", street_address=" + street_address
 				+ ", city=" + city + ", zip_code=" + zip_code + ", country=" + country + ", telephone=" + telephone

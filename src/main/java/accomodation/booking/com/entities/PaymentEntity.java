@@ -23,9 +23,16 @@ public class PaymentEntity {
      private Long id;
     
     @ManyToOne
+<<<<<<< HEAD
     private UserEntity user_entity;
       
     @OneToOne
+=======
+    @Cascade( value = org.hibernate.annotations.CascadeType.ALL)
+    private UserEntity user_entity;
+      
+    @OneToOne(mappedBy="paymentEntity")
+>>>>>>> d1f72d543312810b0f1c62ceedc13ff97117c653
     private BookingEntity bookingEntity;
     
     public BookingEntity getBookingEntity() {

@@ -39,17 +39,28 @@ public class UserEntity {
 
 		
 		@Email(message="Please Enter a Valid Email")
+<<<<<<< HEAD
 		@NotBlank(message="Please Enter your Email.")
+=======
+		@NotBlank(message="Please Enter your Email")
+>>>>>>> d1f72d543312810b0f1c62ceedc13ff97117c653
 		@Column(name="email")
 	    private String email;
 		
 		@NotBlank(message= "Please Enter your Password")
+<<<<<<< HEAD
 	    @Size(min=4, message= "Invalid Password, Enter atleast 4 Characters.")
+=======
+	    @Size(min=4, message= "Invalid Password, Enter atleast 4 Characters")
+>>>>>>> d1f72d543312810b0f1c62ceedc13ff97117c653
 	    @Column(name="password")
 	    private String password;
 	    
 		@NotBlank(message = "Please Enter your Phone Number")
+<<<<<<< HEAD
 		@Size(min=4, message= "Your phone number must be atleast 10 digits.")
+=======
+>>>>>>> d1f72d543312810b0f1c62ceedc13ff97117c653
 	    @Column(name="phone")
 	    private String phone;
 	    
@@ -67,6 +78,7 @@ public class UserEntity {
 	    @Size(min=2, message= "Your Last Name must be Wrong")
 	    @Column(name="last_name")
 	    private String last_name;
+<<<<<<< HEAD
 	    
 		public UserEntity() {
 		}
@@ -92,6 +104,8 @@ public class UserEntity {
 			this.first_name = first_name;
 			this.last_name = last_name;
 		}
+=======
+>>>>>>> d1f72d543312810b0f1c62ceedc13ff97117c653
 
 	    
 	
@@ -177,6 +191,34 @@ public class UserEntity {
 			this.last_name = last_name;
 		}
 
+<<<<<<< HEAD
+=======
+		public UserEntity() {
+		}
+
+	
+
+		public UserEntity(Long id, Set<PaymentEntity> paymentEntity, Set<BookingEntity> booking_entity,
+				Set<ListPropertyEntity> list_proprty,
+				@Email(message = "Please Enter a Valid Email") @NotBlank(message = "Please Enter your Email") String email,
+				@NotBlank(message = "Please Enter your Password") @Size(min = 4, message = "Invalid Password, Enter atleast 4 Characters") String password,
+				@NotBlank(message = "Please Enter your Phone Number") String phone, String type,
+				@NotBlank(message = "Please Enter your First Name") @Size(min = 2, message = "Your First Name must be Wrong") String first_name,
+				@NotBlank(message = "Please Enter your Last Name") @Size(min = 2, message = "Your Last Name must be Wrong") String last_name) {
+			super();
+			this.id = id;
+			this.paymentEntity = paymentEntity;
+			this.booking_entity = booking_entity;
+			this.list_proprty = list_proprty;
+			this.email = email;
+			this.password = password;
+			this.phone = phone;
+			this.type = type;
+			this.first_name = first_name;
+			this.last_name = last_name;
+		}
+
+>>>>>>> d1f72d543312810b0f1c62ceedc13ff97117c653
 		@Override
 		public String toString() {
 			return "UserEntity [id=" + id + ", paymentEntity=" + paymentEntity + ", booking_entity=" + booking_entity
